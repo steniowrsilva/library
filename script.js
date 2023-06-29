@@ -17,6 +17,7 @@ function displayBooks() {
   // iterate through the array to display the books on the page
   for(let i = 0; i<myLibrary.length; i++){
     const bookShelf = document.createElement('tr');
+    // bookShelf.classList.add("d-flex");
     bookShelf.innerHTML = `<td>${myLibrary[i].title}</td> <td>${myLibrary[i].author}</td> <td>${myLibrary[i].numberOfPages}</td>`;
 
     books.appendChild(bookShelf);
@@ -25,8 +26,10 @@ function displayBooks() {
 }
 // -------------------------------------------------------------------------------
 
-addBookToLibrary('auto da compadecida', 'suassuna', 200);
+addBookToLibrary('O Auto da Compadecida', 'Ariano Suassuna', 208);
 
-addBookToLibrary('memórias póstumas', 'machado', 200);
+addBookToLibrary('Memórias Póstumas de Brás Cubas', 'Machado de Assis', 480);
+
+addBookToLibrary('Grande Sertão: Veredas', 'Guuimarães Rosa', 594);
 
 displayBooks();
