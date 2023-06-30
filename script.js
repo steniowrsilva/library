@@ -15,15 +15,28 @@ function addBookToLibrary(title, author, numberOfPages) {
 
 function displayBooks() {
   // iterate through the array to display the books on the page
+  books.innerHTML = "";
   for(let i = 0; i<myLibrary.length; i++){
     const bookShelf = document.createElement('tr');
-    // bookShelf.classList.add("d-flex");
     bookShelf.innerHTML = `<td>${myLibrary[i].title}</td> <td>${myLibrary[i].author}</td> <td>${myLibrary[i].numberOfPages}</td>`;
-
+    
     books.appendChild(bookShelf);
-
   }
 }
+const addBookForm = document.querySelector("#addBookForm");
+
+const booksTitle = document.querySelector("#title");
+const booksAuthor = document.querySelector("#author");
+const booksNumberOfPages = document.querySelector("#number-of-pages");
+
+const addBook = document.querySelector("#add-book");
+
+addBookForm.addEventListener("submit", (e)=>{
+      e.preventDefault();
+      addBookToLibrary(booksTitle.value, booksAuthor.value, booksNumberOfPages.value);
+      displayBooks();
+
+});
 // -------------------------------------------------------------------------------
 
 addBookToLibrary('O Auto da Compadecida', 'Ariano Suassuna', 208);
