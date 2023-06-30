@@ -29,11 +29,13 @@ const booksTitle = document.querySelector("#title");
 const booksAuthor = document.querySelector("#author");
 const booksNumberOfPages = document.querySelector("#number-of-pages");
 
-const addBook = document.querySelector("#add-book");
-
 addBookForm.addEventListener("submit", (e)=>{
       e.preventDefault();
-      addBookToLibrary(booksTitle.value, booksAuthor.value, booksNumberOfPages.value);
+      if (booksTitle.value == "" || booksAuthor.value == "" || booksNumberOfPages.value==""){
+        alert("empty fields. Fill them");
+      }else{
+        addBookToLibrary(booksTitle.value, booksAuthor.value, booksNumberOfPages.value);
+      }
       displayBooks();
 
 });
